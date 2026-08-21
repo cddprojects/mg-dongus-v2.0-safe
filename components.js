@@ -144,7 +144,7 @@
         <a href="index.html#faq">FAQ</a>\
       </div>\
       <div class="nav-right">\
-        <button class="nav-cta js-ctcw-waf-s" type="button">' + WA_ICON + '<span>Join Free</span></button>\
+        <button class="nav-cta js-ctcw-waf-s" type="button" id="waf-s">' + WA_ICON + '<span>Join Free</span></button>\
         <button class="nav-hamburger" id="hamburger" aria-label="Open menu">\
           <span></span><span></span><span></span>\
         </button>\
@@ -156,7 +156,7 @@
       <a href="index.html#markets">Markets</a>\
       <a href="index.html#testimonials">Community</a>\
       <a href="index.html#faq">FAQ</a>\
-      <button type="button" class="drawer-cta js-ctcw-waf-s">See Tomorrow\'s Analysis</button>\
+      <button type="button" class="drawer-cta js-ctcw-waf-s" id="waf-s">See Tomorrow\'s Analysis</button>\
     </div>\
   ';
 
@@ -176,7 +176,7 @@
           <ul>\
             <li><a href="index.html#how">How It Works</a></li>\
             <li><a href="index.html#features">What You Get</a></li>\
-            <li><button type="button" class="js-ctcw-waf-s">Join Free</button></li>\
+            <li><button type="button" class="js-ctcw-waf-s" id="waf-s">Join Free</button></li>\
             <li><a href="index.html#faq">FAQ</a></li>\
           </ul>\
         </div>\

@@ -1,19 +1,18 @@
 Options -Indexes
 RewriteEngine On
 
-# Remove .html extension — redirect to clean URL
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [R=301,L]
+# Ensure RewriteBase matches the subfolder
+RewriteBase /f2/
+
+# Remove .html extension for clean URLs within f2
+RewriteCond %{THE_REQUEST} /f2/([^.]+)\.html [NC]
+RewriteRule ^ /f2/%1 [R=301,L]
 
 # Serve .html file for clean URL requests
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^.]+)$ $1.html [L]
-
-# Canonical: remove trailing slash (except root)
-RewriteCond %{REQUEST_URI} ^/(.+)/$
-RewriteRule ^ /%1 [R=301,L]
 
 # Force HTTPS
 RewriteCond %{HTTPS} off

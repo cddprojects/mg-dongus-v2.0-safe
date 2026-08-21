@@ -1,19 +1,20 @@
 Options -Indexes
 RewriteEngine On
 
-# Ensure RewriteBase matches the subfolder
-RewriteBase /f2/
+# Dynamically figure out what subfolder we are currently sitting inside
+RewriteCond %{REQUEST_URI} ^/([^/]+)/
+RewriteRule ^ - [E=CURRENT_DIR:%1]
 
-# Remove .html extension for clean URLs within f2
-RewriteCond %{THE_REQUEST} /f2/([^.]+)\.html [NC]
-RewriteRule ^ /f2/%1 [R=301,L]
+# Remove .html extension using the dynamic folder name (prevents redirect loops)
+RewriteCond %{THE_REQUEST} /%{ENV:CURRENT_DIR}/([^.]+)\.html [NC]
+RewriteRule ^([^.]+)\.html$ /%{ENV:CURRENT_DIR}/$1 [R=301,L]
 
-# Serve .html file for clean URL requests
+# Serve .html file transparently for clean URL requests
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^.]+)$ $1.html [L]
 
-# Force HTTPS
+# Force HTTPS safely
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

@@ -220,7 +220,7 @@
 
     startTriggerFeedback(trigger);
 
-    if (isMobileSticky()) {
+    if (isMobileSticky() && trigger.id === "m-floating-btn") {
       openWhatsAppFromSticky();
       return;
     }

@@ -11,7 +11,7 @@
 .hz-whatsapp *::before,
 .hz-whatsapp *::after { box-sizing: border-box; }
 
-button[data-hz-whatsapp-cta] {
+button[data-ctcw-trigger] {
   font-family: inherit;
   cursor: pointer;
 }
@@ -21,7 +21,7 @@ button[data-hz-whatsapp-cta] {
   right: max(1.25rem, env(safe-area-inset-right));
   bottom: max(1.25rem, env(safe-area-inset-bottom));
   z-index: 9998;
-  display: none !important; /* hidden; popup still opens via data-hz-whatsapp-cta */
+  display: none !important; /* hidden; CTAs now open the CTC widget via data-ctcw-trigger */
   visibility: hidden !important;
   pointer-events: none !important;
   align-items: center;

@@ -337,6 +337,18 @@
       flex-wrap: wrap;
     }
     .footer-links a:hover { color: rgba(244,247,250,0.75); }
+    .footer-contact {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      max-width: 52ch;
+      color: rgba(244, 247, 250, 0.4);
+    }
+    .footer-contact a {
+      color: rgba(252, 253, 254, 0.7);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
 
     @media (max-width: 600px) {
       .ty-wrap { padding: 3rem clamp(1.25rem, 4vw, 3rem); }
@@ -355,11 +367,11 @@
   <nav class="site-nav" aria-label="Primary">
     <a class="site-nav-brand" href="/"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</a>
     <div class="site-nav-links">
-      <a href="/#market">Live data</a>
+      <a href="/#market">Market data</a>
       <a href="/#method">Method</a>
       <a href="/#receive">What you get</a>
       <a href="/#faq">FAQ</a>
-      <button class="site-nav-cta js-ctcw-waf-s" type="button" id="waf-s">Join free</button>
+      <button class="site-nav-cta js-ctcw-waf-s" type="button" id="waf-s">Request briefing</button>
     </div>
   </nav>
 
@@ -381,7 +393,7 @@
       <h1 class="ty-headline" id="ty-headline">You're in!</h1>
 
       <p class="ty-sub">
-        You're set for a clearer morning routine. Your free 5-minute pre-market briefing arrives before <strong style="color:rgba(244,247,250,0.85);">9 AM ET</strong> on the next trading day — straight to your WhatsApp.
+        You're set for the educational WhatsApp briefing. On US trading days it is typically prepared before <strong style="color:rgba(244,247,250,0.85);">9:00 AM ET</strong> when sent. Timing and length are not guaranteed. This is not financial advice and not a recommendation to buy or sell.
       </p>
 
       <div class="ty-steps">
@@ -396,22 +408,22 @@
         <div class="ty-step">
           <div class="step-num">2</div>
           <div class="step-text">
-            <strong>Receive your 5-minute morning brief</strong>
-            <span>Before 9 AM ET every trading day, your AI-screened briefing covers 2–3 US stock insights — technicals, sector trends, and key catalysts for your own research.</span>
+            <strong>Receive the morning brief</strong>
+            <span>On US trading days, your morning brief is typically prepared before 9:00 AM ET when sent — market context, sector notes, key catalysts, and ticker examples for your own research. Contents and length can vary.</span>
           </div>
         </div>
         <div class="ty-step">
           <div class="step-num">3</div>
           <div class="step-text">
             <strong>Do your own research</strong>
-            <span>Use the brief as one input. Investment decisions stay yours — always.</span>
+            <span>Use the briefing as one source of information alongside your own independent research. Investment decisions stay yours — always.</span>
           </div>
         </div>
       </div>
 
       <div class="ty-pills">
-        <span class="ty-pill"><span class="check">✓</span> Always free</span>
-        <span class="ty-pill"><span class="check">✓</span> No subscription</span>
+        <span class="ty-pill"><span class="check">✓</span> Currently no charge</span>
+        <span class="ty-pill"><span class="check">✓</span> Educational only</span>
         <span class="ty-pill"><span class="check">✓</span> Leave anytime</span>
       </div>
 
@@ -426,6 +438,7 @@
       <div>
         <div class="footer-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>
         <div>© <span id="year"></span> PreMarketGuide. All rights reserved.</div>
+        <p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently no charge to subscribe. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
       </div>
       <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>

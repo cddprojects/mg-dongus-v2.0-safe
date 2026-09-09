@@ -270,6 +270,7 @@
     }
     .disclaimer .wrap { max-width: 780px; margin: 0 auto; }
     .disclaimer strong { color: var(--ink-2); font-weight: 750; }
+    .disclaimer a { color: var(--sky); text-decoration: underline; text-underline-offset: 2px; }
 
     /* ── Footer ───────────────────────────────────────────────── */
     footer {
@@ -304,6 +305,18 @@
       flex-wrap: wrap;
     }
     .footer-links a:hover { color: #fff; }
+    .footer-contact {
+      margin-top: 0.45rem;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      max-width: 52ch;
+      color: rgba(244, 247, 250, 0.5);
+    }
+    .footer-contact a {
+      color: rgba(252, 253, 254, 0.85);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
   </style>
 </head>
 
@@ -317,11 +330,11 @@
   <nav class="site-nav" aria-label="Primary">
     <a class="site-nav-brand" href="/"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</a>
     <div class="site-nav-links">
-      <a href="/#market">Live data</a>
+      <a href="/#market">Market data</a>
       <a href="/#method">Method</a>
       <a href="/#receive">What you get</a>
       <a href="/#faq">FAQ</a>
-      <button class="site-nav-cta js-ctcw-waf-s" type="button" id="waf-s">Join free</button>
+      <button class="site-nav-cta js-ctcw-waf-s" type="button" id="waf-s">Request briefing</button>
     </div>
   </nav>
 
@@ -335,7 +348,7 @@
   <!-- ── Content ──────────────────────────────────────────────── -->
   <div class="policy-wrap">
 
-    <span class="last-updated">Last updated: July 2026</span>
+    <span class="last-updated">Last updated: September 2026</span>
 
     <div class="highlight-box">
       This Privacy Policy applies to personal information collected through the PreMarketGuide landing page and sign-up form. By submitting the form, you agree to the practices described below.
@@ -373,7 +386,7 @@
       <p>The information you provide is used solely for the following purposes:</p>
       <ul>
         <li>To send you an invitation to the PreMarketGuide WhatsApp briefing group</li>
-        <li>To deliver the free daily pre-market educational briefing via WhatsApp</li>
+        <li>To deliver the standard pre-market educational briefing via WhatsApp</li>
         <li>To contact you with important updates related to the service</li>
       </ul>
       <p>We do not use your information for paid advertising, profiling, or any purpose beyond operating and communicating about PreMarketGuide.</p>
@@ -438,10 +451,14 @@
   <aside class="disclaimer">
     <div class="wrap">
       <strong>Important disclaimer.</strong>
-      PreMarketGuide provides educational market commentary and research context only.
-      Nothing on this page or in our briefings is investment advice, a solicitation, or a recommendation to buy, sell, or hold any security.
+      PreMarketGuide is an independent publisher of educational market commentary. We are not a registered broker-dealer or investment adviser, and we are not affiliated with any other market-research brand.
+      Content is furnished for personal, informational, and educational purposes only.
+      No mention of a particular security constitutes a recommendation to buy, sell, or hold that security.
+      Information is obtained from publicly available sources believed to be reliable, but accuracy, completeness, and timeliness are not guaranteed.
+      Check information independently before relying on it. Use of this service is solely at your own risk.
+      Currently no charge to subscribe; fees may be introduced later with notice as described in our Terms of Use.
       Markets involve risk, including loss of principal. Past performance does not indicate future results.
-      Always do your own research or consult a licensed advisor before making investment decisions.
+      Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.
     </div>
   </aside>
 
@@ -451,6 +468,7 @@
       <div>
         <div class="footer-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>
         <div>© <span id="year"></span> PreMarketGuide. All rights reserved.</div>
+        <p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently no charge to subscribe; fees may be introduced later with notice. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
       </div>
       <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>

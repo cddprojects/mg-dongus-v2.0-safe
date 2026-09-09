@@ -144,7 +144,7 @@
         <a href="index.html#faq">FAQ</a>\
       </div>\
       <div class="nav-right">\
-        <button class="nav-cta js-ctcw-waf-s" type="button" id="waf-s">' + WA_ICON + '<span>Join Free</span></button>\
+        <button class="nav-cta js-ctcw-waf-s" type="button" id="waf-s">' + WA_ICON + '<span>Request briefing</span></button>\
         <button class="nav-hamburger" id="hamburger" aria-label="Open menu">\
           <span></span><span></span><span></span>\
         </button>\
@@ -169,14 +169,14 @@
             <div class="logo-icon">' + CHART_ICON + '</div>\
             <span style="color:#fff;">US<em style="color:var(--gold, #f59e0b);">StockEdge</em></span>\
           </a>\
-          <p>Free daily US stock market insights and technical analysis delivered to investors via WhatsApp. For informational purposes only.</p>\
+          <p>Daily US stock market insights and technical analysis delivered to investors via WhatsApp. Currently available at no charge. For informational purposes only. Independent educational publisher — not affiliated with any other market-research brand.</p>\
         </div>\
         <div class="footer-links">\
           <h5>Quick Links</h5>\
           <ul>\
             <li><a href="index.html#how">How It Works</a></li>\
             <li><a href="index.html#features">What You Get</a></li>\
-            <li><button type="button" class="js-ctcw-waf-s" id="waf-s">Join Free</button></li>\
+            <li><button type="button" class="js-ctcw-waf-s" id="waf-s">Request briefing</button></li>\
             <li><a href="index.html#faq">FAQ</a></li>\
           </ul>\
         </div>\

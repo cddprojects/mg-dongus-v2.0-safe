@@ -30,9 +30,9 @@
   <!-- DeepClick start -->
   <script src="https://storage.deepclick.com/dc-cdn/js-sdk/production/deep-click.js?mch_id=2245952&sdk_code=a3f6a864&integration_type=website" defer></script>
   <!-- DeepClick end -->
-  <title>PreMarketGuide — Free 5-Minute Pre-Market Briefing</title>
+  <title>PreMarketGuide — Educational Pre-Market Briefing on WhatsApp</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <meta name="description" content="Free educational US pre-market briefing before 9 AM ET. AI-screened context, sector notes, and stocks worth researching — delivered to WhatsApp. Not financial advice." />
+  <meta name="description" content="Independent educational US pre-market briefing on WhatsApp. Selected overnight news, futures context, earnings headlines, and sector notes — typically sent before 9:00 AM ET when prepared. Currently no charge. Not financial advice." />
   <meta name="robots" content="index, follow" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -276,10 +276,16 @@
     .hero-note {
       margin: 0.95rem auto 0;
       font-size: 0.78rem;
-      color: rgba(244, 247, 250, 0.5);
-      max-width: 46ch;
+      line-height: 1.5;
+      color: rgba(244, 247, 250, 0.68);
+      max-width: 62ch;
       opacity: 0;
       animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.62s forwards;
+    }
+    .hero-note a {
+      color: rgba(252, 253, 254, 0.9);
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     @keyframes rise {
@@ -553,6 +559,16 @@
       max-width: 56ch;
       margin-bottom: 2rem;
     }
+    .section-sub a,
+    details.faq-item a,
+    .disclaimer a {
+      color: var(--sky);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .method .section-sub a {
+      color: #8ec8db;
+    }
 
     .reveal {
       opacity: 0;
@@ -595,7 +611,7 @@
 
     .pillar {
       display: grid;
-      grid-template-columns: 7rem 1fr;
+      grid-template-columns: 9rem 1fr;
       gap: 1.25rem;
       padding: 1.45rem 0;
       border-top: 1px solid rgba(255,255,255,0.12);
@@ -747,6 +763,13 @@
       font-size: 0.68rem;
       color: rgba(233,237,239,0.4);
       text-align: right;
+    }
+    .wa-caption {
+      margin: 0.75rem 0 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-width: 38ch;
+      line-height: 1.45;
     }
 
     /* How */
@@ -1124,6 +1147,18 @@
       flex-wrap: wrap;
     }
     .footer-links a:hover { color: #fff; }
+    .footer-contact {
+      margin-top: 0.45rem;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      max-width: 52ch;
+      color: rgba(244, 247, 250, 0.5);
+    }
+    .footer-contact a {
+      color: rgba(252, 253, 254, 0.85);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
 
     /* Sticky mobile CTA */
     .sticky-cta {
@@ -1239,31 +1274,31 @@
     <nav class="nav" aria-label="Primary">
       <div class="nav-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>
       <div class="nav-links">
-        <a href="#market">Live data</a>
+        <a href="#market">Market data</a>
         <a href="#method">Method</a>
         <a href="#receive">What you get</a>
         <a href="#faq">FAQ</a>
-        <button class="nav-cta js-ctcw-waf-s" type="button" id="waf-s">Join free</button>
+        <button class="nav-cta js-ctcw-waf-s" type="button" id="waf-s">Request briefing</button>
       </div>
     </nav>
 
     <div class="hero-content">
       <h1 class="brand">PreMarketGuide</h1>
       <div class="brand-rule" aria-hidden="true"></div>
-      <p class="headline">Your free 5-minute pre-market briefing.</p>
+      <p class="headline">A short pre-market briefing on WhatsApp.</p>
       <p class="subhead">
-        Overnight headlines pile up. We organize educational US market context into one short brief — delivered before 9 AM ET — so you can start the session informed, not overwhelmed.
+        Too much market noise before the open? PreMarketGuide is an independent educational publisher. We send one WhatsApp message that summarizes selected overnight news, futures context, earnings headlines, and sector notes — typically sent on U.S. trading days before 9:00 AM ET when the briefing is prepared. Delivery time and length can vary.
       </p>
       <div class="cta-row">
-        <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Get the free briefing</button>
-        <a class="btn-ghost" href="#market">View live market data</a>
+        <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Request the WhatsApp briefing</button>
+        <a class="btn-ghost" href="#market">View market snapshot</a>
       </div>
-      <p class="hero-note">Educational content only. Not financial advice. Not a recommendation to buy or sell any security.</p>
+      <p class="hero-note">Currently no charge to subscribe. Fees may be introduced later, with notice as described in our <a href="terms-of-use.html">Terms</a>. This is educational market context — not personalized advice, not a recommendation to buy or sell, and not a profit claim. Investing involves risk, including loss of principal. Publisher: PreMarketGuide. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
     </div>
   </header>
 
   <!-- Live ticker (same Worker/API as the first PreMarketGuide site) -->
-  <div class="ticker-wrap" aria-label="Live US stock ticker">
+  <div class="ticker-wrap" aria-label="US stock ticker">
     <div class="ticker-bar">
       <div class="ticker-status-badge">
         <span class="live-dot" id="ticker-dot"></span>
@@ -1289,12 +1324,12 @@
     <div class="wrap-wide">
       <div class="market-head">
         <div>
-          <p class="kicker">Live US market snapshot</p>
-          <h2 class="section-title" id="market-title">S&amp;P 500 top 20 — prices &amp; moves</h2>
-          <p class="section-sub" style="margin-bottom:0;">Real quotes from the same data feed as our first site. Tap a ticker for day high/low and open context.</p>
+          <p class="kicker">US market snapshot</p>
+          <h2 class="section-title" id="market-title">Selected large-cap US stocks — prices &amp; moves</h2>
+          <p class="section-sub" style="margin-bottom:0;">US market price data, refreshed periodically. Tap a ticker for day high/low and open context.</p>
         </div>
         <div class="market-meta">
-          <div class="live-pill" id="card-live-badge"><span class="live-dot"></span> Live Market Data</div>
+          <div class="live-pill" id="card-live-badge"><span class="live-dot"></span> US Market Data</div>
           <span class="refresh-note" id="card-refresh-time">Updating…</span>
         </div>
       </div>
@@ -1366,7 +1401,7 @@
           </table>
         </div>
       </div>
-      <p class="market-note" id="card-note">* Live quotes for educational context. Not financial advice.</p>
+      <p class="market-note" id="card-note">* US market data for educational context. Not financial advice. Information is obtained from sources believed to be reliable; accuracy and timeliness are not guaranteed.</p>
     </div>
   </section>
 
@@ -1375,7 +1410,7 @@
       <p class="kicker">The morning problem</p>
       <h2 class="section-title" id="problem-title">Too much noise before the open</h2>
       <p class="section-sub">
-        Most self-directed investors don’t need more random tips — they need a clearer starting point before the US session begins.
+        Most self-directed investors don’t need more random tips — they need a clearer starting point before the US session begins. This briefing organizes selected public information; it does not tell you what to trade.
       </p>
       <div class="problem-grid">
         <div class="problem-item reveal">
@@ -1401,47 +1436,47 @@
   <section class="method" id="method" aria-labelledby="method-title">
     <div class="wrap">
       <p class="kicker">Our method</p>
-      <h2 class="section-title" id="method-title">Diversify. Analyse. Track.</h2>
+      <h2 class="section-title" id="method-title">Market context. Sector trends. Key catalysts.</h2>
       <p class="section-sub">
-        The same intelligence stack behind PreMarketGuide — framed as a 5-minute educational briefing habit, not trade instructions.
+        One organized morning brief with selected public information — typically prepared before the regular US session when sent. Educational only; not a live trading terminal, rating service, or recommendation engine.
       </p>
       <div class="pillars">
         <article class="pillar reveal">
-          <div class="pillar-label">Diversify</div>
+          <div class="pillar-label">Context</div>
           <div>
-            <h3>Multiple data sources</h3>
-            <p>We pull from more than one market feed so your brief isn’t built on a single noisy signal.</p>
+            <h3>Market context</h3>
+            <p>Start with the map, not a flood of headlines: selected overnight headlines and index/futures context before the open. Descriptive only — not a market call.</p>
             <ul class="pillar-list">
-              <li>Price action across major US names</li>
-              <li>Volume and relative strength context</li>
-              <li>Sector leadership / lagging notes</li>
-              <li>Overnight macro and calendar awareness</li>
+              <li>Futures and overnight headline context (including S&amp;P and Nasdaq when covered)</li>
+              <li>Overnight headlines organized, not dumped</li>
+              <li>Events often discussed into the regular session</li>
+              <li>Typically a short read; length can vary</li>
             </ul>
           </div>
         </article>
         <article class="pillar reveal">
-          <div class="pillar-label">Analyse</div>
+          <div class="pillar-label">Sectors</div>
           <div>
-            <h3>AI-screened market review</h3>
-            <p>Every trading morning, AI helps screen thousands of data points across NYSE &amp; NASDAQ — then we package the educational takeaways.</p>
+            <h3>Sector trends</h3>
+            <p>Notes on which groups are leading or lagging in the selected data, so you can decide where your own research time goes.</p>
             <ul class="pillar-list">
-              <li>Technical summary notes (levels, trend context)</li>
-              <li>Catalysts and themes worth watching</li>
-              <li>2–3 stock profiles for further research</li>
-              <li>Clear reminder: you make your own decisions</li>
+              <li>Sector notes into the open</li>
+              <li>Leadership vs. lagging tape notes from public data</li>
+              <li>Theme framing (for example, semiconductors or financials)</li>
+              <li>Context first — tickers second</li>
             </ul>
           </div>
         </article>
         <article class="pillar reveal">
-          <div class="pillar-label">Track</div>
+          <div class="pillar-label">Catalysts</div>
           <div>
-            <h3>Sector &amp; trend context</h3>
-            <p>Before tickers, you get the map: where attention is rotating and what may influence the open.</p>
+            <h3>Key catalysts &amp; ticker examples</h3>
+            <p>We may include ticker examples drawn from public market data (for instance trend, volume, or widely discussed levels) so you can do your own research. Inclusion is not a recommendation, rating, or forecast.</p>
             <ul class="pillar-list">
-              <li>Index tone and futures context</li>
-              <li>Sector rotation framing</li>
-              <li>Earnings / Fed calendar awareness when relevant</li>
-              <li>Watchlist ideas for your own study list</li>
+              <li>Ticker examples for further independent study</li>
+              <li>Trend, volume, and key-level notes when included</li>
+              <li>Educational context only — not a buy/sell call</li>
+              <li>You make your own decisions</li>
             </ul>
           </div>
         </article>
@@ -1452,34 +1487,34 @@
   <section class="receive" id="receive" aria-labelledby="receive-title">
     <div class="wrap-wide">
       <p class="kicker">What you receive</p>
-      <h2 class="section-title" id="receive-title">Everything in your free daily briefing</h2>
+      <h2 class="section-title" id="receive-title">What’s in the morning brief</h2>
       <p class="section-sub">
-        Structured educational information for investors who want clarity before the open — without a long research marathon.
+        Market context, sector notes, key catalysts, and ticker examples for your own research — typically a short WhatsApp read. Length and contents can vary by day. Not a recommendation to buy or sell.
       </p>
       <div class="receive-grid">
         <div class="receive-item reveal">
-          <h3>Pre-market stock briefing</h3>
-          <p>2–3 US stock insights every trading day before 9 AM ET, covering technicals, sector trends, and key catalysts for study.</p>
+          <h3>Market context</h3>
+          <p>Selected overnight headlines and index/futures context so you have a backdrop before the bell — not a dump of every headline, and not a market call.</p>
         </div>
         <div class="receive-item reveal">
-          <h3>Technical analysis summaries</h3>
-          <p>Key support/resistance context, moving-average framing, momentum notes, and volume observations for each highlighted name.</p>
+          <h3>Sector notes</h3>
+          <p>Notes on groups that are leading or lagging in the selected data, so you can see where attention is rotating before you pick names to study.</p>
         </div>
         <div class="receive-item reveal">
-          <h3>Sector &amp; macro context</h3>
-          <p>Fed calendar events, earnings weeks, sector rotations, and macro data that may influence how you research the session.</p>
+          <h3>Key catalysts</h3>
+          <p>Earnings, news, and event notes that are often discussed for the session — flagged as research context, not trade instructions.</p>
         </div>
         <div class="receive-item reveal">
-          <h3>WhatsApp delivery</h3>
-          <p>The brief lands where you already check messages — so research doesn’t depend on opening five research tabs.</p>
+          <h3>Ticker examples</h3>
+          <p>A short list of sample names with educational notes such as trend, volume, or key levels when included. Not a recommendation to buy or sell, and not a forecast.</p>
         </div>
         <div class="receive-item reveal">
-          <h3>Community discussion</h3>
-          <p>Ask questions, share research angles, and learn alongside other US-focused investors in the group.</p>
+          <h3>On WhatsApp, typically a short read</h3>
+          <p>One briefing, delivered where you already check messages. Typically prepared before 9:00 AM ET on US trading days when sent. Timing and length are not guaranteed.</p>
         </div>
         <div class="receive-item reveal">
-          <h3>Always free — no hidden fees</h3>
-          <p>Free to join and remain. No subscriptions, no commissions, no consulting fees. Unsubscribe anytime.</p>
+          <h3>Educational — currently no charge</h3>
+          <p>Educational market commentary only. Not financial advice. Currently no membership, subscription, or consulting fee. We may introduce fees later, with notice as described in our Terms. Unsubscribe anytime.</p>
         </div>
       </div>
     </div>
@@ -1490,54 +1525,56 @@
       <div class="delivery-layout">
         <div>
           <p class="kicker">How it arrives</p>
-          <h2 class="section-title" id="delivery-title">A short WhatsApp brief before the bell</h2>
+          <h2 class="section-title" id="delivery-title">One briefing. Delivered to WhatsApp.</h2>
           <p class="section-sub">
-            Every morning before 9 AM ET, our AI-screened educational briefing highlights stocks worth researching — with enough context to decide what you’ll study next.
+            Your morning brief is typically prepared before 9:00 AM ET on US trading days when sent — selected market context, sector notes, and ticker examples for your own research. Timing and length are not guaranteed.
           </p>
           <ul class="check-list">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>AI-screened — refreshed with the latest available market data each trading day</span>
+              <span>Market context — selected overnight headlines and futures backdrop</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Instant WhatsApp delivery — direct to your phone</span>
+              <span>Sector notes — groups leading or lagging in the selected data</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Designed to read in about five focused minutes</span>
+              <span>Key catalysts and ticker examples for independent study</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Educational framing only — not a buy/sell instruction</span>
+              <span>On WhatsApp — educational only, not a buy/sell instruction</span>
             </li>
           </ul>
-          <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Request free access</button>
+          <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Request the WhatsApp briefing</button>
         </div>
 
+        <div>
         <div class="wa-phone reveal" aria-label="Sample WhatsApp briefing preview">
           <div class="wa-top">
             <div class="wa-avatar">UE</div>
             <div>
               <strong>PreMarketGuide</strong>
-              <span>Daily briefing · before 9:00 AM ET</span>
+              <span>Morning brief · typically before 9:00 AM ET</span>
             </div>
           </div>
           <div class="wa-bubble"><span class="gold">PreMarketGuide — Morning Brief</span>
-S&amp;P / Nasdaq overnight tone: mixed risk appetite after futures swings.
+<span class="gold">Market context</span>
+S&amp;P 500 futures · Nasdaq futures
 
-<span class="gold">Sectors to watch</span>
-• Semiconductors — relative strength vs broader tape
-• Financials — rate-sensitive follow-through
+<span class="gold">Sector notes</span>
+• Semiconductors
+• Financials
 
-<span class="gold">Research angles today</span>
-1) NVDA — volume + trend context for study
-2) JPM — support/resistance levels to review
-3) AMZN — sector peer comparison notes
+<span class="gold">Ticker examples</span>
+NVDA · JPM · AMZN
+Format illustration only — not a live list
 
-Tap a ticker in the group for the fuller educational write-up.
-Educational only — not financial advice.</div>
+Educational only — not financial advice. Not a recommendation.</div>
           <div class="wa-time">8:42 AM</div>
+        </div>
+        <p class="wa-caption">Illustrative mock of message format. Not a live alert, not a trade signal, and not a recommendation. Sample tickers are educational examples only and are not current advice.</p>
         </div>
       </div>
     </div>
@@ -1548,7 +1585,7 @@ Educational only — not financial advice.</div>
       <p class="kicker">Simple process</p>
       <h2 class="section-title" id="how-title">How it works</h2>
       <p class="section-sub">
-        From form to first briefing — built to be fast. Your job is research; our job is organizing the morning context.
+        From form to first briefing — a few simple steps. Your job is research; our job is organizing morning context.
       </p>
       <div class="steps">
         <div class="step reveal">
@@ -1558,18 +1595,18 @@ Educational only — not financial advice.</div>
         </div>
         <div class="step reveal">
           <div class="n">2</div>
-          <h3>We screen the market</h3>
-          <p>Before the open, we run educational scans across NYSE and NASDAQ for notable setups and context.</p>
+          <h3>We organize the morning context</h3>
+          <p>News, futures, earnings, and sectors get sorted into market context, sector notes, and key catalysts — so you can see what may deserve your own attention.</p>
         </div>
         <div class="step reveal">
           <div class="n">3</div>
-          <h3>Receive daily analysis</h3>
-          <p>By 9 AM ET you get stock profiles with technical summary, key levels, and market context.</p>
+          <h3>Get the WhatsApp brief</h3>
+          <p>On US trading days, the brief is typically prepared before 9:00 AM ET when sent. Timing and length are not guaranteed.</p>
         </div>
         <div class="step reveal">
           <div class="n">4</div>
           <h3>Do your own research</h3>
-          <p>Use the brief as one input. Investment decisions stay yours — always.</p>
+          <p>Use the briefing as one source of information alongside your own independent research. Investment decisions stay yours — always.</p>
         </div>
       </div>
     </div>
@@ -1633,7 +1670,7 @@ Educational only — not financial advice.</div>
       <div class="audience-grid">
         <div class="audience-item reveal">
           <h3>Professionals with limited morning time</h3>
-          <p>You can give the market five focused minutes before work — not an hour of tab-hopping.</p>
+          <p>You want a short, structured read before work — not an hour of tab-hopping. Length can vary by day.</p>
         </div>
         <div class="audience-item reveal">
           <h3>Newer US-market learners</h3>
@@ -1653,13 +1690,13 @@ Educational only — not financial advice.</div>
 
   <section class="why-free" id="why-free" aria-labelledby="why-title">
     <div class="wrap">
-      <p class="kicker">Why it’s free</p>
-      <h2 class="section-title" id="why-title">No payment wall. No “gotcha” upsell on day one.</h2>
+      <p class="kicker">Currently no charge</p>
+      <h2 class="section-title" id="why-title">Currently no charge. No payment wall on day one.</h2>
       <p class="section-sub">
-        Facebook Ads reviewers and new members both need clarity: this is free educational market commentary.
+        This is an educational WhatsApp briefing from an independent publisher of informational market context — not a broker, investment adviser, or signal service. We are not affiliated with any other market-research brand.
       </p>
       <ul class="why-list">
-        <li class="reveal"><strong>Free to join and stay.</strong> The daily briefing is provided at no charge.</li>
+        <li class="reveal"><strong>Currently no charge.</strong> The standard daily briefing is currently provided at no charge. Fees may be introduced later, with notice as described in our Terms.</li>
         <li class="reveal"><strong>Lead form only.</strong> We ask for name, email, and WhatsApp so we can deliver access — nothing else is required to start.</li>
         <li class="reveal"><strong>Leave anytime.</strong> Unsubscribe or exit the group whenever you want.</li>
         <li class="reveal"><strong>Educational disclaimer always on.</strong> We do not promise profits, returns, or “winning” trades.</li>
@@ -1668,36 +1705,48 @@ Educational only — not financial advice.</div>
   </section>
 
   <div class="mid-cta">
-    <h2>Start your morning with a clearer briefing habit</h2>
-    <p>Submit the form once — get the free educational US market briefing on WhatsApp.</p>
-    <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Join free — takes under a minute</button>
+    <h2>Start your morning informed.</h2>
+    <p>One educational briefing. Typically before 9:00 AM ET when prepared. On WhatsApp. Currently no charge.</p>
+    <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Request the WhatsApp briefing</button>
   </div>
 
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
       <p class="kicker">FAQ</p>
       <h2 class="section-title" id="faq-title">Questions before you join</h2>
-      <p class="section-sub">Straight answers so you can decide quickly — and so ad reviewers see clear intent.</p>
+      <p class="section-sub">Straight answers so you can decide quickly — including where the information comes from and what it is not.</p>
 
       <details class="faq-item">
         <summary>Is this financial advice?</summary>
-        <p>No. PreMarketGuide provides educational market commentary and research context only. Nothing we send is a recommendation to buy, sell, or hold any security.</p>
+        <p>No. PreMarketGuide is a publisher of educational market commentary. We are not a registered broker-dealer or investment adviser. Nothing we send is a recommendation to buy, sell, or hold any security.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What’s in the morning brief?</summary>
+        <p>Market context, sector notes, key catalysts, and ticker examples for your own research — with educational notes such as trend, volume, and key levels when included. It is typically a short WhatsApp read, usually prepared before 9:00 AM ET on US trading days when sent. Contents, length, and timing can vary. Nothing in the brief is a recommendation to buy or sell.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where does the market information come from?</summary>
+        <p>Briefings compile selected publicly available market data and educational context. We are an independent publisher and are not affiliated with any other market-research brand. Information is obtained from sources believed to be reliable; accuracy, completeness, and timeliness are not guaranteed.</p>
       </details>
       <details class="faq-item">
         <summary>What time do I receive the brief?</summary>
-        <p>On trading days, the educational briefing is aimed for delivery before 9:00 AM ET — so you can review it before the regular US session.</p>
+        <p>On US trading days, the educational briefing is typically prepared before 9:00 AM ET when sent — so you can review it before the regular US session. Delivery timing is a target, not a guarantee.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a fee?</summary>
+        <p>Currently no charge to subscribe. There is no membership, subscription, or consulting fee for the standard daily briefing today. We may introduce fees later, with notice as described in our Terms of Use.</p>
       </details>
       <details class="faq-item">
         <summary>What do I get after submitting the form?</summary>
-        <p>You’ll be directed to a confirmation page with next steps and WhatsApp access details for the free daily briefing group.</p>
+        <p>You’ll be directed to a confirmation page with next steps and WhatsApp access details for the daily briefing group.</p>
       </details>
       <details class="faq-item">
-        <summary>Do you guarantee profits or “beat the market”?</summary>
-        <p>No. We never guarantee results. Markets involve risk, including loss of principal. Past performance does not indicate future results.</p>
+        <summary>Do you promise investment results?</summary>
+        <p>No. We do not promise, imply, or guarantee profits, returns, or any market outcome. Markets involve risk, including loss of principal. Past performance does not indicate future results. Use of this service is solely at your own risk.</p>
       </details>
       <details class="faq-item">
         <summary>Which markets do you cover?</summary>
-        <p>US-listed equities with a focus on NYSE, NASDAQ, S&amp;P 500 names, and related sector/thematic ETFs when useful for context.</p>
+        <p>US-listed equities with a focus on NYSE, Nasdaq, S&amp;P 500 names, and related sector/thematic ETFs when useful for context.</p>
       </details>
       <details class="faq-item">
         <summary>Is my information sold?</summary>
@@ -1713,10 +1762,14 @@ Educational only — not financial advice.</div>
   <aside class="disclaimer">
     <div class="wrap">
       <strong>Important disclaimer.</strong>
-      PreMarketGuide provides educational market commentary and research context only.
-      Nothing on this page or in our briefings is investment advice, a solicitation, or a recommendation to buy, sell, or hold any security.
+      PreMarketGuide is an independent publisher of educational market commentary. We are not a registered broker-dealer or investment adviser, and we are not affiliated with any other market-research brand.
+      Content is furnished for personal, informational, and educational purposes only.
+      No mention of a particular security constitutes a recommendation to buy, sell, or hold that security.
+      Information is obtained from publicly available sources believed to be reliable, but accuracy, completeness, and timeliness are not guaranteed.
+      Check information independently before relying on it. Use of this service is solely at your own risk.
+      Currently no charge to subscribe; fees may be introduced later with notice as described in our Terms of Use.
       Markets involve risk, including loss of principal. Past performance does not indicate future results.
-      Always do your own research or consult a licensed advisor before making investment decisions.
+      Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.
     </div>
   </aside>
 
@@ -1725,6 +1778,7 @@ Educational only — not financial advice.</div>
       <div>
         <div class="footer-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>
         <div>© <span id="year"></span> PreMarketGuide. All rights reserved.</div>
+        <p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently no charge to subscribe; fees may be introduced later with notice. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
       </div>
       <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -1734,7 +1788,7 @@ Educational only — not financial advice.</div>
   </footer>
 
   <div class="sticky-cta" id="sticky-cta">
-    <button type="button" class="btn-primary js-ctcw-waf-s" id="waf-s">Get free pre-market briefing</button>
+    <button type="button" class="btn-primary js-ctcw-waf-s" id="waf-s">Request the WhatsApp briefing</button>
   </div>
 
   <script>
@@ -1827,7 +1881,7 @@ Educational only — not financial advice.</div>
         }
         document.getElementById('ticker-track').innerHTML = tickerItems + tickerItems;
         if (dot) dot.className = 'live-dot' + (open ? '' : ' closed');
-        if (statusEl) statusEl.textContent = open ? 'Market Open · Live Data' : 'Market Closed · Last session data';
+        if (statusEl) statusEl.textContent = open ? 'Market Open · US Market Data' : 'Market Closed · Last session data';
         var tu = document.getElementById('ticker-update-time');
         if (tu) tu.textContent = 'Updated ' + et + ' ET';
 
@@ -1858,31 +1912,11 @@ Educational only — not financial advice.</div>
         if (badge) {
           badge.className = 'live-pill' + (open ? '' : ' closed');
           badge.innerHTML = open
-            ? '<span class="live-dot"></span> Live Market Data'
+            ? '<span class="live-dot"></span> US Market Data'
             : '<span class="live-dot closed"></span> Market Closed · Last session';
         }
         var crt = document.getElementById('card-refresh-time');
         if (crt) crt.textContent = 'Updated ' + et + ' ET';
-
-        // Feed WhatsApp sample with live top movers when available
-        var ranked = DISPLAY_SYMBOLS.map(function(sym, idx) {
-          return { sym: sym, q: quotes[idx] || {} };
-        }).filter(function(x) { return x.q && x.q.dp != null; });
-        ranked.sort(function(a, b) { return Math.abs(b.q.dp) - Math.abs(a.q.dp); });
-        var bubble = document.querySelector('.wa-bubble');
-        if (bubble && ranked.length >= 3) {
-          var lines = '';
-          for (var m = 0; m < 3; m++) {
-            var s = ranked[m], up2 = s.q.dp >= 0;
-            lines += (m + 1) + ') ' + s.sym + ' — $' + fmt(s.q.c) + ' ' + (up2 ? '▲ +' : '▼ ') + fmt(s.q.dp) + '%\n';
-          }
-          bubble.innerHTML =
-            '<span class="gold">PreMarketGuide — Morning Brief</span>\n' +
-            'Live movers from today’s session data:\n\n' +
-            '<span class="gold">Research angles</span>\n' +
-            lines +
-            '\nEducational only — not financial advice.';
-        }
       }).catch(function(e) {
         console.warn('Market data error:', e);
         if (dot) dot.className = 'live-dot closed';

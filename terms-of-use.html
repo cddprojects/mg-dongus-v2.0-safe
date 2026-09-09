@@ -271,6 +271,7 @@
     }
     .disclaimer .wrap { max-width: 780px; margin: 0 auto; }
     .disclaimer strong { color: var(--ink-2); font-weight: 750; }
+    .disclaimer a { color: var(--sky); text-decoration: underline; text-underline-offset: 2px; }
 
     /* ── Footer ───────────────────────────────────────────────── */
     footer {
@@ -305,6 +306,18 @@
       flex-wrap: wrap;
     }
     .footer-links a:hover { color: #fff; }
+    .footer-contact {
+      margin-top: 0.45rem;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      max-width: 52ch;
+      color: rgba(244, 247, 250, 0.5);
+    }
+    .footer-contact a {
+      color: rgba(252, 253, 254, 0.85);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
   </style>
 </head>
 
@@ -318,11 +331,11 @@
   <nav class="site-nav" aria-label="Primary">
     <a class="site-nav-brand" href="/"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</a>
     <div class="site-nav-links">
-      <a href="/#market">Live data</a>
+      <a href="/#market">Market data</a>
       <a href="/#method">Method</a>
       <a href="/#receive">What you get</a>
       <a href="/#faq">FAQ</a>
-      <button class="site-nav-cta js-ctcw-waf-s" type="button" id="waf-s">Join free</button>
+      <button class="site-nav-cta js-ctcw-waf-s" type="button" id="waf-s">Request briefing</button>
     </div>
   </nav>
 
@@ -336,10 +349,10 @@
   <!-- ── Content ──────────────────────────────────────────────── -->
   <div class="policy-wrap">
 
-    <span class="last-updated">Last updated: July 2026</span>
+    <span class="last-updated">Last updated: September 2026</span>
 
     <div class="notice-box">
-      <strong>Important notice.</strong> PreMarketGuide provides market information for <strong>educational and informational purposes only</strong>. We are not a registered investment advisor, broker-dealer, or financial planning firm. Nothing in our content constitutes financial advice or a recommendation to buy, sell, or hold any security.
+      <strong>Important notice.</strong> PreMarketGuide is a <strong>publisher</strong> of market information for <strong>educational and informational purposes only</strong>. We are not a registered investment adviser, broker-dealer, or financial planning firm. Nothing in our content constitutes financial advice or a recommendation to buy, sell, or hold any security. The standard daily briefing is currently provided at no charge; fees may be introduced later with notice as described below.
     </div>
 
     <div class="policy-toc">
@@ -370,26 +383,27 @@
       <h2>2. Description of Service</h2>
       <p>PreMarketGuide provides:</p>
       <ul>
-        <li>A free daily pre-market educational briefing delivered via WhatsApp before 9 AM ET on trading days</li>
+        <li>A pre-market educational briefing delivered via WhatsApp, typically prepared before 9:00 AM ET on US trading days</li>
         <li>Technical analysis summaries including price levels, indicators, and volume context</li>
         <li>Sector and macroeconomic context relevant to US equity markets</li>
         <li>A community platform for investors to discuss and learn about market information</li>
       </ul>
-      <p>All content is sourced from publicly available market data and is provided free of charge for educational purposes only.</p>
+      <p>All content is compiled from publicly available market data and is currently provided at no charge for educational purposes only. PreMarketGuide is an independent publisher and is not affiliated with any other market-research brand.</p>
     </div>
 
     <div class="policy-section" id="s3">
       <h2>3. Not Financial Advice</h2>
       <p>The content provided through PreMarketGuide is strictly for <strong>educational and informational purposes only</strong>. Specifically:</p>
       <ul>
+        <li>PreMarketGuide is a publisher. We are not a registered broker-dealer or a registered investment adviser</li>
         <li>No content constitutes financial advice, investment advice, trading advice, or any other form of professional advice</li>
-        <li>We do not recommend that any specific security should be bought, sold, or held</li>
+        <li>No mention of a particular security constitutes a recommendation to buy, sell, or hold that or any other security</li>
         <li>Past market analysis or discussion does not guarantee or predict future market performance</li>
         <li>All investing involves risk, including the possible loss of principal</li>
-        <li>You should always conduct your own independent research before making any investment decision</li>
+        <li>You should always conduct your own independent research and check information before relying on it</li>
         <li>Consult a licensed financial advisor before making investment decisions</li>
       </ul>
-      <p>We are not registered investment advisors and do not hold any financial services licence.</p>
+      <p>We are not registered investment advisors and do not hold any financial services licence. Use of the Service is solely at your own risk.</p>
     </div>
 
     <div class="policy-section" id="s4">
@@ -401,7 +415,7 @@
         <li>The continuous, uninterrupted availability of the Service</li>
         <li>The accuracy of third-party market data sources used in our briefings</li>
       </ul>
-      <p>Market data displayed on our website may be delayed. We do not guarantee real-time accuracy.</p>
+      <p>The Service is provided on an “as is” and “as available” basis. Information is obtained from sources believed to be reliable. Nevertheless, due to human and mechanical error, accuracy, truthfulness, timeliness, reliability, completeness, or correct sequencing cannot be guaranteed. Market data displayed on our website may be delayed. We do not guarantee real-time accuracy.</p>
     </div>
 
     <div class="policy-section" id="s5">
@@ -420,14 +434,14 @@
 
     <div class="policy-section" id="s6">
       <h2>6. Free Service</h2>
-      <p>Access to PreMarketGuide is provided free of charge. We do not charge subscription fees, membership fees, or any other fees for our standard service. We reserve the right to introduce premium features in the future with appropriate advance notice.</p>
+      <p>Access to PreMarketGuide is currently provided at no charge. There are currently no subscription, membership, or other fees for our standard daily briefing. We reserve the right to introduce fees or premium features in the future with appropriate advance notice. “Currently no charge” does not mean the service will always be free.</p>
       <p>We do not accept compensation from any company or individual in exchange for mentioning, recommending, or analysing their securities.</p>
     </div>
 
     <div class="policy-section" id="s7">
       <h2>7. Intellectual Property</h2>
       <p>All original content created by PreMarketGuide — including written analysis, graphics, and website design — is our intellectual property. You may not reproduce, distribute, or use our content for commercial purposes without express written permission.</p>
-      <p>Market data displayed on the website is sourced from third-party providers and is subject to their respective terms of use.</p>
+      <p>Market data displayed on the website is sourced from third-party providers and is subject to their respective terms of use. References to third-party brands, if any, do not imply affiliation, endorsement, or a license to republish their content.</p>
     </div>
 
     <div class="policy-section" id="s8">
@@ -472,10 +486,14 @@
   <aside class="disclaimer">
     <div class="wrap">
       <strong>Important disclaimer.</strong>
-      PreMarketGuide provides educational market commentary and research context only.
-      Nothing on this page or in our briefings is investment advice, a solicitation, or a recommendation to buy, sell, or hold any security.
+      PreMarketGuide is an independent publisher of educational market commentary. We are not a registered broker-dealer or investment adviser, and we are not affiliated with any other market-research brand.
+      Content is furnished for personal, informational, and educational purposes only.
+      No mention of a particular security constitutes a recommendation to buy, sell, or hold that security.
+      Information is obtained from publicly available sources believed to be reliable, but accuracy, completeness, and timeliness are not guaranteed.
+      Check information independently before relying on it. Use of this service is solely at your own risk.
+      Currently no charge to subscribe; fees may be introduced later with notice as described in our Terms of Use.
       Markets involve risk, including loss of principal. Past performance does not indicate future results.
-      Always do your own research or consult a licensed advisor before making investment decisions.
+      Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.
     </div>
   </aside>
 
@@ -485,6 +503,7 @@
       <div>
         <div class="footer-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>
         <div>© <span id="year"></span> PreMarketGuide. All rights reserved.</div>
+        <p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently no charge to subscribe; fees may be introduced later with notice. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
       </div>
       <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>

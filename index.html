@@ -37,8 +37,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=20260909-2" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=20260909-3" />
   <link rel="stylesheet" href="assets/whatsapp-popup.css?v=20260821-17" />
   <script src="https://ctc.chatfromforms.com/embed.js.php?id=12&key=1bfd42900634a6194864ee610c9e7bff76a1651eddea5d53"></script>
   <script src="assets/ctcw-trigger.js?v=20260821-17"></script>
@@ -51,24 +51,24 @@
 
   <div id="site-chrome-header"></div>
 
-  <header class="hero-edition">
-    <div class="hero-copy">
-      <p class="edition-kicker">Morning desk <span class="rule" aria-hidden="true"></span> Typically before 9:00 AM ET</p>
+  <header class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="assets/hero-briefing.jpg" alt="" width="2000" height="1333" fetchpriority="high" />
+    </div>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="hero-content">
       <h1 class="brand">PreMarketGuide</h1>
+      <div class="brand-rule" aria-hidden="true"></div>
       <p class="headline">A short pre-market briefing on WhatsApp.</p>
       <p class="subhead">
         Too much noise before the open? One WhatsApp briefing of selected overnight news, index futures context, earnings, and sector notes — typically before 9:00 AM ET when prepared.
       </p>
       <div class="cta-row">
-        <button class="btn-primary js-ctcw-waf-s" type="button">Request the WhatsApp briefing</button>
+        <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Request the WhatsApp briefing</button>
         <a class="btn-ghost" href="#market">View market snapshot</a>
       </div>
       <p class="hero-note">Currently $0. No subscription, membership, or consulting fee today. Fees may be introduced later with notice. Educational market context — not individual advice, not a recommendation to buy or sell, and not a profit claim. Investing involves risk, including loss of principal. Publisher: PreMarketGuide, Detroit, MI 48226, United States. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
     </div>
-    <figure class="hero-plate">
-      <img src="assets/hero-briefing.jpg" alt="" width="2000" height="1333" fetchpriority="high" />
-      <figcaption>Educational briefing · not a trading terminal</figcaption>
-    </figure>
   </header>
 
   <div class="ticker-wrap" aria-label="Delayed sample of US stock prices">
@@ -215,7 +215,7 @@
       </p>
       <div class="pillars">
         <article class="pillar reveal">
-          <div class="pillar-label">01 / Context</div>
+          <div class="pillar-label">Context</div>
           <div>
             <h3>Market context</h3>
             <p>Start with the map, not a flood of headlines: selected overnight headlines and index futures context before the open. Descriptive only — not a market call.</p>
@@ -228,7 +228,7 @@
           </div>
         </article>
         <article class="pillar reveal">
-          <div class="pillar-label">02 / Sectors</div>
+          <div class="pillar-label">Sectors</div>
           <div>
             <h3>Sector trends</h3>
             <p>Notes on which groups are leading or lagging in the selected data, so you can decide where your own research time goes.</p>
@@ -241,7 +241,7 @@
           </div>
         </article>
         <article class="pillar reveal">
-          <div class="pillar-label">03 / Catalysts</div>
+          <div class="pillar-label">Catalysts</div>
           <div>
             <h3>Key catalysts &amp; ticker examples</h3>
             <p>We may include ticker examples drawn from public market data (for instance trend, volume, or widely discussed levels) so you can do your own research. Inclusion is not a recommendation, rating, or forecast.</p>
@@ -539,7 +539,7 @@ Educational only — not financial advice. Not a recommendation.</div>
     <button type="button" class="btn-primary js-ctcw-waf-s">Request the WhatsApp briefing</button>
   </div>
 
-  <script src="assets/chrome.js?v=20260909-2"></script>
-  <script src="assets/market.js?v=20260909-2"></script>
+  <script src="assets/chrome.js?v=20260909-3"></script>
+  <script src="assets/market.js?v=20260909-3"></script>
 </body>
 </html>

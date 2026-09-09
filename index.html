@@ -32,7 +32,7 @@
   <!-- DeepClick end -->
   <title>PreMarketGuide — Educational Pre-Market Briefing on WhatsApp</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <meta name="description" content="Independent educational US pre-market briefing on WhatsApp. Selected overnight news, futures context, earnings headlines, and sector notes — typically sent before 9:00 AM ET when prepared. Currently no charge. Not financial advice." />
+  <meta name="description" content="Independent educational US pre-market briefing on WhatsApp. Selected overnight news, index futures context, earnings headlines, and sector notes — typically sent before 9:00 AM ET when prepared. Currently no charge. Not financial advice." />
   <meta name="robots" content="index, follow" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -483,16 +483,19 @@
     }
     .stocks-tabs {
       display: flex;
+      flex-wrap: wrap;
       background: var(--mist);
       border-bottom: 1px solid var(--line);
     }
     .stab {
       flex: 1;
+      min-width: 8.5rem;
       border: none;
       background: transparent;
-      padding: 0.85rem 0.75rem;
+      padding: 0.75rem 0.55rem;
       font-weight: 750;
-      font-size: 0.88rem;
+      font-size: 0.78rem;
+      line-height: 1.25;
       color: var(--muted);
       cursor: pointer;
       border-bottom: 2px solid transparent;
@@ -1287,22 +1290,22 @@
       <div class="brand-rule" aria-hidden="true"></div>
       <p class="headline">A short pre-market briefing on WhatsApp.</p>
       <p class="subhead">
-        Too much noise before the open? One WhatsApp briefing of selected overnight news, futures, earnings, and sector notes — typically before 9:00 AM ET when prepared.
+        Too much noise before the open? One WhatsApp briefing of selected overnight news, index futures context, earnings, and sector notes — typically before 9:00 AM ET when prepared.
       </p>
       <div class="cta-row">
         <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Request the WhatsApp briefing</button>
         <a class="btn-ghost" href="#market">View market snapshot</a>
       </div>
-      <p class="hero-note">Currently no charge to subscribe. Fees may be introduced later, with notice as described in our <a href="terms-of-use.html">Terms</a>. This is educational market context — not personalized advice, not a recommendation to buy or sell, and not a profit claim. Investing involves risk, including loss of principal. Publisher: PreMarketGuide. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
+      <p class="hero-note">Currently $0. No subscription, membership, or consulting fee today. Fees may be introduced later with notice. Educational market context — not individual advice, not a recommendation to buy or sell, and not a profit claim. Investing involves risk, including loss of principal. Publisher: PreMarketGuide. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
     </div>
   </header>
 
-  <!-- Live ticker (same Worker/API as the first PreMarketGuide site) -->
-  <div class="ticker-wrap" aria-label="US stock ticker">
+  <!-- Delayed sample ticker (same Worker/API as the first PreMarketGuide site) -->
+  <div class="ticker-wrap" aria-label="Delayed sample of US stock prices">
     <div class="ticker-bar">
       <div class="ticker-status-badge">
         <span class="live-dot" id="ticker-dot"></span>
-        <span id="ticker-status-text">Loading market data…</span>
+        <span id="ticker-status-text">Loading sample prices…</span>
       </div>
       <span class="ticker-last-update" id="ticker-update-time"></span>
     </div>
@@ -1326,10 +1329,10 @@
         <div>
           <p class="kicker">US market snapshot</p>
           <h2 class="section-title" id="market-title">Selected large-cap US stocks — prices &amp; moves</h2>
-          <p class="section-sub" style="margin-bottom:0;">US market price data, refreshed periodically. Tap a ticker for day high/low and open context.</p>
+          <p class="section-sub" style="margin-bottom:0;">Selected US prices for educational context, refreshed periodically and may be delayed. Tap a ticker for day high/low and open context.</p>
         </div>
         <div class="market-meta">
-          <div class="live-pill" id="card-live-badge"><span class="live-dot"></span> US Market Data</div>
+          <div class="live-pill" id="card-live-badge"><span class="live-dot"></span> Sample US prices (delayed)</div>
           <span class="refresh-note" id="card-refresh-time">Updating…</span>
         </div>
       </div>
@@ -1379,9 +1382,9 @@
 
       <div class="movers-table-wrap">
         <div class="stocks-tabs">
-          <button class="stab active" type="button" onclick="switchTab('gainers', this)">Top Gainers</button>
-          <button class="stab" type="button" onclick="switchTab('losers', this)">Top Losers</button>
-          <button class="stab" type="button" onclick="switchTab('marketcap', this)">By Market Cap</button>
+          <button class="stab active" type="button" onclick="switchTab('gainers', this)">Largest increases (this sample)</button>
+          <button class="stab" type="button" onclick="switchTab('losers', this)">Largest decreases (this sample)</button>
+          <button class="stab" type="button" onclick="switchTab('marketcap', this)">By company size (this sample)</button>
         </div>
         <div class="stocks-table-scroll">
           <table class="stocks-table">
@@ -1396,12 +1399,12 @@
               </tr>
             </thead>
             <tbody id="stocks-tbody">
-              <tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px;">Loading market data…</td></tr>
+              <tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px;">Loading sample prices…</td></tr>
             </tbody>
           </table>
         </div>
       </div>
-      <p class="market-note" id="card-note">* US market data for educational context. Not financial advice. Information is obtained from sources believed to be reliable; accuracy and timeliness are not guaranteed.</p>
+      <p class="market-note" id="card-note">* Selected US prices for educational context. May be delayed. Not financial advice. Information is obtained from sources believed to be reliable; accuracy and timeliness are not guaranteed.</p>
     </div>
   </section>
 
@@ -1415,7 +1418,7 @@
       <div class="problem-grid">
         <div class="problem-item reveal">
           <h3>Headlines arrive unsorted</h3>
-          <p>Overnight news, futures moves, and sector chatter hit at once — without a simple map of what deserves research time.</p>
+          <p>Overnight news, index futures moves, and sector chatter hit at once — without a simple map of what you may want to review.</p>
         </div>
         <div class="problem-item reveal">
           <h3>Research time disappears</h3>
@@ -1423,7 +1426,7 @@
         </div>
         <div class="problem-item reveal">
           <h3>Context gets skipped</h3>
-          <p>Without sector and theme framing, it’s harder to decide which names deserve a closer look later.</p>
+          <p>Without sector and theme framing, it’s harder to decide which public headlines you may want to review later.</p>
         </div>
         <div class="problem-item reveal">
           <h3>Delivery is scattered</h3>
@@ -1438,14 +1441,14 @@
       <p class="kicker">Our method</p>
       <h2 class="section-title" id="method-title">Market context. Sector trends. Key catalysts.</h2>
       <p class="section-sub">
-        One organized morning brief with selected public information — typically prepared before the regular US session when sent. Educational only; not a live trading terminal, rating service, or recommendation engine.
+        One organized morning brief with selected public information — typically prepared before the regular US session when sent. Educational only; not a trading terminal, rating service, or recommendation engine.
       </p>
       <div class="pillars">
         <article class="pillar reveal">
           <div class="pillar-label">Context</div>
           <div>
             <h3>Market context</h3>
-            <p>Start with the map, not a flood of headlines: selected overnight headlines and index/futures context before the open. Descriptive only — not a market call.</p>
+            <p>Start with the map, not a flood of headlines: selected overnight headlines and index futures context before the open. Descriptive only — not a market call.</p>
             <ul class="pillar-list">
               <li>Futures and overnight headline context (including S&amp;P and Nasdaq when covered)</li>
               <li>Overnight headlines organized, not dumped</li>
@@ -1474,7 +1477,7 @@
             <p>We may include ticker examples drawn from public market data (for instance trend, volume, or widely discussed levels) so you can do your own research. Inclusion is not a recommendation, rating, or forecast.</p>
             <ul class="pillar-list">
               <li>Ticker examples for further independent study</li>
-              <li>Trend, volume, and key-level notes when included</li>
+              <li>Trend, volume, and widely discussed public-price notes when included</li>
               <li>Educational context only — not a buy/sell call</li>
               <li>You make your own decisions</li>
             </ul>
@@ -1494,7 +1497,7 @@
       <div class="receive-grid">
         <div class="receive-item reveal">
           <h3>Market context</h3>
-          <p>Selected overnight headlines and index/futures context so you have a backdrop before the bell — not a dump of every headline, and not a market call.</p>
+          <p>Selected overnight headlines and index futures context so you have a backdrop before the bell — not a dump of every headline, and not a market call.</p>
         </div>
         <div class="receive-item reveal">
           <h3>Sector notes</h3>
@@ -1506,7 +1509,7 @@
         </div>
         <div class="receive-item reveal">
           <h3>Ticker examples</h3>
-          <p>A short list of sample names with educational notes such as trend, volume, or key levels when included. Not a recommendation to buy or sell, and not a forecast.</p>
+          <p>A short list of sample names with educational notes such as trend, volume, or widely discussed public prices when included. Not a recommendation to buy or sell, and not a forecast.</p>
         </div>
         <div class="receive-item reveal">
           <h3>On WhatsApp, typically a short read</h3>
@@ -1514,7 +1517,7 @@
         </div>
         <div class="receive-item reveal">
           <h3>Educational — currently no charge</h3>
-          <p>Educational market commentary only. Not financial advice. Currently no membership, subscription, or consulting fee. We may introduce fees later, with notice as described in our Terms. Unsubscribe anytime.</p>
+          <p>Educational market commentary only. Not financial advice. Currently $0 — no membership, subscription, or consulting fee today. Fees may be introduced later with notice. Unsubscribe anytime.</p>
         </div>
       </div>
     </div>
@@ -1532,7 +1535,7 @@
           <ul class="check-list">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Market context — selected overnight headlines and futures backdrop</span>
+              <span>Market context — selected overnight headlines and index futures backdrop</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
@@ -1561,7 +1564,7 @@
           </div>
           <div class="wa-bubble"><span class="gold">PreMarketGuide — Morning Brief</span>
 <span class="gold">Market context</span>
-S&amp;P 500 futures · Nasdaq futures
+S&amp;P 500 index futures · Nasdaq index futures
 
 <span class="gold">Sector notes</span>
 • Semiconductors
@@ -1574,7 +1577,7 @@ Format illustration only — not a live list
 Educational only — not financial advice. Not a recommendation.</div>
           <div class="wa-time">8:42 AM</div>
         </div>
-        <p class="wa-caption">Illustrative mock of message format. Not a live alert, not a trade signal, and not a recommendation. Sample tickers are educational examples only and are not current advice.</p>
+        <p class="wa-caption">Illustrative mock of message format. Not a live alert, not trading instructions, and not a recommendation. Sample tickers are educational examples only and are not current advice.</p>
         </div>
       </div>
     </div>
@@ -1596,7 +1599,7 @@ Educational only — not financial advice. Not a recommendation.</div>
         <div class="step reveal">
           <div class="n">2</div>
           <h3>We organize the morning context</h3>
-          <p>News, futures, earnings, and sectors get sorted into market context, sector notes, and key catalysts — so you can see what may deserve your own attention.</p>
+          <p>News, index futures context, earnings, and sectors get sorted into market context, sector notes, and key catalysts — so you can see what you may want to review yourself.</p>
         </div>
         <div class="step reveal">
           <div class="n">3</div>
@@ -1641,7 +1644,7 @@ Educational only — not financial advice. Not a recommendation.</div>
         <div class="market-row reveal">
           <strong>S&amp;P 500</strong>
           <div>
-            <p>Large-cap index focus for tone, leadership, and educational watchlist framing.</p>
+            <p>Large-cap index focus for tone, leadership, and educational examples.</p>
             <div class="tags">
               <span>Blue Chip</span><span>Dividend</span><span>Growth</span>
             </div>
@@ -1650,7 +1653,7 @@ Educational only — not financial advice. Not a recommendation.</div>
         <div class="market-row reveal">
           <strong>ETFs</strong>
           <div>
-            <p>Sector and thematic funds when they help explain rotation and risk appetite.</p>
+            <p>Sector and thematic funds when they help explain rotation in the selected data.</p>
             <div class="tags">
               <span>QQQ</span><span>SPY</span><span>Sector ETFs</span>
             </div>
@@ -1663,9 +1666,9 @@ Educational only — not financial advice. Not a recommendation.</div>
   <section class="audience" id="audience" aria-labelledby="audience-title">
     <div class="wrap">
       <p class="kicker">Who it’s for</p>
-      <h2 class="section-title" id="audience-title">Built for busy, self-directed investors</h2>
+      <h2 class="section-title" id="audience-title">Built for busy, self-directed readers</h2>
       <p class="section-sub">
-        If you want a repeatable morning briefing habit — not another signal service — this page is for you.
+        If you want a repeatable morning briefing habit — not a brokerage or advisory service — this page is for you.
       </p>
       <div class="audience-grid">
         <div class="audience-item reveal">
@@ -1674,11 +1677,11 @@ Educational only — not financial advice. Not a recommendation.</div>
         </div>
         <div class="audience-item reveal">
           <h3>Newer US-market learners</h3>
-          <p>You want structured educational context (sectors, levels, themes) while you build your process.</p>
+          <p>You want structured educational context (sectors, themes, public-price notes) while you build your process.</p>
         </div>
         <div class="audience-item reveal">
-          <h3>Experienced retail traders</h3>
-          <p>You already decide your own trades — you just want a cleaner overnight/open digest first.</p>
+          <h3>Experienced self-directed readers</h3>
+          <p>You already make your own investment decisions — you just want a cleaner overnight/open digest first.</p>
         </div>
         <div class="audience-item reveal">
           <h3>WhatsApp-first readers</h3>
@@ -1690,23 +1693,23 @@ Educational only — not financial advice. Not a recommendation.</div>
 
   <section class="why-free" id="why-free" aria-labelledby="why-title">
     <div class="wrap">
-      <p class="kicker">Currently no charge</p>
-      <h2 class="section-title" id="why-title">Currently no charge. No payment wall on day one.</h2>
+      <p class="kicker">Currently $0</p>
+      <h2 class="section-title" id="why-title">Currently $0. No subscription fee today.</h2>
       <p class="section-sub">
-        This is an educational WhatsApp briefing from an independent publisher of informational market context — not a broker, investment adviser, or signal service. We are not affiliated with any other market-research brand.
+        This is an educational WhatsApp briefing from an independent publisher of informational market context — not a broker, investment adviser, or advisory service. We are not affiliated with any other market-research brand.
       </p>
       <ul class="why-list">
-        <li class="reveal"><strong>Currently no charge.</strong> The standard daily briefing is currently provided at no charge. Fees may be introduced later, with notice as described in our Terms.</li>
+        <li class="reveal"><strong>Currently $0.</strong> The standard daily briefing has no subscription, membership, or consulting fee today. Fees may be introduced later with notice.</li>
         <li class="reveal"><strong>Lead form only.</strong> We ask for name, email, and WhatsApp so we can deliver access — nothing else is required to start.</li>
         <li class="reveal"><strong>Leave anytime.</strong> Unsubscribe or exit the group whenever you want.</li>
-        <li class="reveal"><strong>Educational disclaimer always on.</strong> We do not promise profits, returns, or “winning” trades.</li>
+        <li class="reveal"><strong>Educational disclaimer always on.</strong> We do not promise profits, returns, or investment results.</li>
       </ul>
     </div>
   </section>
 
   <div class="mid-cta">
     <h2>Start your morning informed.</h2>
-    <p>One educational briefing. Typically before 9:00 AM ET when prepared. On WhatsApp. Currently no charge.</p>
+    <p>One educational briefing. Typically before 9:00 AM ET when prepared. On WhatsApp. Currently $0.</p>
     <button class="btn-primary js-ctcw-waf-s" type="button" id="waf-s">Request the WhatsApp briefing</button>
   </div>
 
@@ -1722,7 +1725,7 @@ Educational only — not financial advice. Not a recommendation.</div>
       </details>
       <details class="faq-item">
         <summary>What’s in the morning brief?</summary>
-        <p>Market context, sector notes, key catalysts, and ticker examples for your own research — with educational notes such as trend, volume, and key levels when included. It is typically a short WhatsApp read, usually prepared before 9:00 AM ET on US trading days when sent. Contents, length, and timing can vary. Nothing in the brief is a recommendation to buy or sell.</p>
+        <p>Market context, sector notes, key catalysts, and ticker examples for your own research — with educational notes such as trend, volume, and widely discussed public prices when included. It is typically a short WhatsApp read, usually prepared before 9:00 AM ET on US trading days when sent. Contents, length, and timing can vary. Nothing in the brief is a recommendation to buy or sell.</p>
       </details>
       <details class="faq-item">
         <summary>Where does the market information come from?</summary>
@@ -1734,7 +1737,7 @@ Educational only — not financial advice. Not a recommendation.</div>
       </details>
       <details class="faq-item">
         <summary>Is there a fee?</summary>
-        <p>Currently no charge to subscribe. There is no membership, subscription, or consulting fee for the standard daily briefing today. We may introduce fees later, with notice as described in our Terms of Use.</p>
+        <p>Currently $0 to subscribe. There is no membership, subscription, or consulting fee for the standard daily briefing today. Fees may be introduced later with notice.</p>
       </details>
       <details class="faq-item">
         <summary>What do I get after submitting the form?</summary>
@@ -1742,7 +1745,7 @@ Educational only — not financial advice. Not a recommendation.</div>
       </details>
       <details class="faq-item">
         <summary>Do you promise investment results?</summary>
-        <p>No. We do not promise, imply, or guarantee profits, returns, or any market outcome. Markets involve risk, including loss of principal. Past performance does not indicate future results. Use of this service is solely at your own risk.</p>
+        <p>No. We do not promise, imply, or guarantee investment results or any market outcome. Markets involve risk, including loss of principal. Past performance does not indicate future results. Use of this service is solely at your own risk.</p>
       </details>
       <details class="faq-item">
         <summary>Which markets do you cover?</summary>
@@ -1767,7 +1770,7 @@ Educational only — not financial advice. Not a recommendation.</div>
       No mention of a particular security constitutes a recommendation to buy, sell, or hold that security.
       Information is obtained from publicly available sources believed to be reliable, but accuracy, completeness, and timeliness are not guaranteed.
       Check information independently before relying on it. Use of this service is solely at your own risk.
-      Currently no charge to subscribe; fees may be introduced later with notice as described in our Terms of Use.
+      Currently $0. No subscription, membership, or consulting fee today. Fees may be introduced later with notice.
       Markets involve risk, including loss of principal. Past performance does not indicate future results.
       Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.
     </div>
@@ -1778,7 +1781,7 @@ Educational only — not financial advice. Not a recommendation.</div>
       <div>
         <div class="footer-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>
         <div>© <span id="year"></span> PreMarketGuide. All rights reserved.</div>
-        <p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently no charge to subscribe; fees may be introduced later with notice. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
+        <p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently $0; no subscription fee today. Fees may be introduced later with notice. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
       </div>
       <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -1881,7 +1884,7 @@ Educational only — not financial advice. Not a recommendation.</div>
         }
         document.getElementById('ticker-track').innerHTML = tickerItems + tickerItems;
         if (dot) dot.className = 'live-dot' + (open ? '' : ' closed');
-        if (statusEl) statusEl.textContent = open ? 'Market Open · US Market Data' : 'Market Closed · Last session data';
+        if (statusEl) statusEl.textContent = open ? 'US session open · delayed sample' : 'US session closed · last available sample';
         var tu = document.getElementById('ticker-update-time');
         if (tu) tu.textContent = 'Updated ' + et + ' ET';
 
@@ -1912,8 +1915,8 @@ Educational only — not financial advice. Not a recommendation.</div>
         if (badge) {
           badge.className = 'live-pill' + (open ? '' : ' closed');
           badge.innerHTML = open
-            ? '<span class="live-dot"></span> US Market Data'
-            : '<span class="live-dot closed"></span> Market Closed · Last session';
+            ? '<span class="live-dot"></span> Sample US prices (delayed)'
+            : '<span class="live-dot closed"></span> Session closed · last available sample';
         }
         var crt = document.getElementById('card-refresh-time');
         if (crt) crt.textContent = 'Updated ' + et + ' ET';

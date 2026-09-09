@@ -18,17 +18,19 @@
   if (header) {
     header.outerHTML =
       '<nav class="site-nav" aria-label="Primary">' +
-        '<a class="nav-brand" href="' + (home ? "#" : "index.html") + '">' +
-          '<img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />' +
-          "PreMarketGuide" +
-        "</a>" +
-        '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Open menu"><span></span></button>' +
-        '<div class="nav-links" id="site-nav-links">' +
-          '<a href="' + navHref("#market") + '">Market data</a>' +
-          '<a href="' + navHref("#method") + '">Method</a>' +
-          '<a href="' + navHref("#receive") + '">What you get</a>' +
-          '<a href="' + navHref("#faq") + '">FAQ</a>' +
-          '<button class="nav-cta js-ctcw-waf-s" type="button" id="waf-s">Request briefing</button>' +
+        '<div class="nav-inner">' +
+          '<a class="nav-brand" href="' + (home ? "#" : "index.html") + '">' +
+            '<img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />' +
+            "PreMarketGuide" +
+          "</a>" +
+          '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Open menu"><span></span></button>' +
+          '<div class="nav-links" id="site-nav-links">' +
+            '<a href="' + navHref("#market") + '">Market data</a>' +
+            '<a href="' + navHref("#method") + '">Method</a>' +
+            '<a href="' + navHref("#receive") + '">What you get</a>' +
+            '<a href="' + navHref("#faq") + '">FAQ</a>' +
+            '<button class="nav-cta js-ctcw-waf-s" type="button" id="waf-s">Request briefing</button>' +
+          "</div>" +
         "</div>" +
       "</nav>";
   }

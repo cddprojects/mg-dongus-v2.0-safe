@@ -36,355 +36,26 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=20260909-2" />
   <link rel="stylesheet" href="assets/whatsapp-popup.css?v=20260821-17" />
   <script src="https://ctc.chatfromforms.com/embed.js.php?id=12&key=1bfd42900634a6194864ee610c9e7bff76a1651eddea5d53"></script>
   <script src="assets/ctcw-trigger.js?v=20260821-17"></script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink:      #14181d;
-      --ink-2:    #22282f;
-      --slate:    #3a4450;
-      --mist:     #e7eef5;
-      --fog:      #f4f7fa;
-      --paper:    #fcfdfe;
-      --line:     #d2dbe5;
-      --sky:      #1f6f8b;
-      --sky-deep: #15566c;
-      --dawn:     #e8a23a;
-      --muted:    #5d6a76;
-      --ok:       #0f766e;
-      --font-display: "Newsreader", Georgia, serif;
-      --font-body:    "Manrope", "Segoe UI", sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      color: var(--paper);
-      background: var(--ink);
-      line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ── Standalone nav ───────────────────────────────────────── */
-    .site-nav {
-      background: rgba(20,24,29,0.85);
-      backdrop-filter: blur(8px);
-      padding: 0 clamp(1.25rem, 4vw, 3rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 62px;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .site-nav-brand {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: #fff;
-    }
-    .site-nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.1rem;
-      align-items: center;
-    }
-    .site-nav-links a,
-    .site-nav-links button {
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: rgba(252,253,254,0.72);
-      transition: color 0.2s;
-    }
-    .site-nav-links a:hover,
-    .site-nav-links button:hover { color: #fff; }
-    .site-nav-cta {
-      padding: 0.5rem 0.9rem;
-      border-radius: 7px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    @media (max-width: 680px) {
-      .site-nav-links a:not(.site-nav-cta) { display: none; }
-    }
-
-    /* ── Main ─────────────────────────────────────────────────── */
-    .ty-wrap {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem clamp(1.25rem, 4vw, 3rem) 4rem;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% -10%, rgba(31,111,139,0.22), transparent 60%),
-        linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ty-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
-
-    .ty-card {
-      max-width: 560px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* confirmed badge */
-    .ty-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(15,118,110,0.12);
-      border: 1px solid rgba(15,118,110,0.28);
-      color: #4ade80;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 999px;
-      margin-bottom: 1.5rem;
-    }
-    .ty-badge .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #4ade80;
-    }
-
-    /* tick icon */
-    .ty-icon {
-      width: 68px;
-      height: 68px;
-      background: rgba(15,118,110,0.12);
-      border: 2px solid rgba(15,118,110,0.28);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 0 1.5rem;
-      color: #4ade80;
-    }
-    .ty-icon svg { width: 32px; height: 32px; }
-
-    .ty-headline {
-      font-family: var(--font-display);
-      font-size: clamp(1.9rem, 4.5vw, 2.7rem);
-      font-weight: 600;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .ty-headline .name { color: var(--dawn); }
-
-    .ty-sub {
-      font-size: 1rem;
-      color: rgba(244,247,250,0.65);
-      max-width: 44ch;
-      margin: 0 0 2.5rem;
-      line-height: 1.75;
-    }
-
-    /* what happens next */
-    .ty-steps {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 12px;
-      padding: 1.6rem 1.75rem;
-      text-align: left;
-      margin-bottom: 1.75rem;
-      width: 100%;
-    }
-    .ty-steps h3 {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.38);
-      margin-bottom: 1.25rem;
-    }
-    .ty-step {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      margin-bottom: 1.15rem;
-    }
-    .ty-step:last-child { margin-bottom: 0; }
-    .step-num {
-      width: 26px;
-      height: 26px;
-      flex-shrink: 0;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--dawn);
-    }
-    .step-text strong {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: rgba(244,247,250,0.9);
-      margin-bottom: 2px;
-    }
-    .step-text span {
-      font-size: 0.83rem;
-      color: rgba(244,247,250,0.45);
-      line-height: 1.5;
-    }
-
-    /* benefit pills */
-    .ty-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.6rem;
-      margin-bottom: 1.75rem;
-    }
-    .ty-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(244,247,250,0.65);
-      padding: 6px 13px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-    .ty-pill .check { color: #4ade80; font-size: 0.75rem; }
-
-    /* back link */
-    .ty-back {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: rgba(252,253,254,0.85);
-      border-bottom: 1px solid rgba(252,253,254,0.35);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .ty-back:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
-
-    /* ── Footer ───────────────────────────────────────────────── */
-    footer {
-      background: rgba(0,0,0,0.25);
-      color: rgba(244,247,250,0.45);
-      padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .footer-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 2rem;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-brand {
-      font-family: var(--font-display);
-      color: rgba(255,255,255,0.75);
-      font-size: 1.05rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .footer-links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-    .footer-links a:hover { color: rgba(244,247,250,0.75); }
-    .footer-contact {
-      margin-top: 0.4rem;
-      font-size: 0.78rem;
-      line-height: 1.5;
-      max-width: 52ch;
-      color: rgba(244, 247, 250, 0.4);
-    }
-    .footer-contact a {
-      color: rgba(252, 253, 254, 0.7);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    @media (max-width: 600px) {
-      .ty-wrap { padding: 3rem clamp(1.25rem, 4vw, 3rem); }
-      .ty-steps { padding: 1.25rem 1.25rem; }
-    }
-  </style>
 </head>
-
-<body>
-  <!-- Google Tag Manager (noscript) -->
+<body class="ty-page">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJQZXQC3"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <!-- ── Nav ──────────────────────────────────────────────────── -->
-  <nav class="site-nav" aria-label="Primary">
-    <a class="site-nav-brand" href="/"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</a>
-    <div class="site-nav-links">
-      <a href="/#market">Market data</a>
-      <a href="/#method">Method</a>
-      <a href="/#receive">What you get</a>
-      <a href="/#faq">FAQ</a>
-      <button class="site-nav-cta js-ctcw-waf-s" type="button" id="waf-s">Request briefing</button>
-    </div>
-  </nav>
+  <div id="site-chrome-header"></div>
 
-  <!-- ── Thank-you content ─────────────────────────────────────── -->
   <main class="ty-wrap">
     <div class="ty-card">
-
       <div class="ty-badge">
         <span class="dot"></span>
         Sign-up Confirmed
       </div>
 
-      <div class="ty-icon">
+      <div class="ty-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"/>
         </svg>
@@ -393,7 +64,7 @@
       <h1 class="ty-headline" id="ty-headline">You're in!</h1>
 
       <p class="ty-sub">
-        You're set for the educational WhatsApp briefing. On US trading days it is typically prepared before <strong style="color:rgba(244,247,250,0.85);">9:00 AM ET</strong> when sent. Timing and length are not guaranteed. This is not financial advice and not a recommendation to buy or sell.
+        You're set for the educational WhatsApp briefing. On US trading days it is typically prepared before <strong>9:00 AM ET</strong> when sent. Timing and length are not guaranteed. This is not financial advice and not a recommendation to buy or sell.
       </p>
 
       <div class="ty-steps">
@@ -427,35 +98,29 @@
         <span class="ty-pill"><span class="check">✓</span> Leave anytime</span>
       </div>
 
-      <a class="ty-back" href="/">← Back to home</a>
-
+      <a class="ty-back" href="index.html">← Back to home</a>
     </div>
   </main>
 
-  <!-- ── Footer ───────────────────────────────────────────────── -->
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>
-        <div>© <span id="year"></span> PreMarketGuide. All rights reserved.</div>
-        <p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently $0; no subscription fee today. Detroit, MI 48226, United States. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>
-      </div>
-      <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-use.html">Terms of Use</a>
-      </div>
-    </div>
-  </footer>
+  <div id="site-chrome-disclaimer"></div>
+  <div id="site-chrome-footer"></div>
 
+  <script src="assets/chrome.js?v=20260909-2"></script>
   <script>
-    document.getElementById("year").textContent = String(new Date().getFullYear());
-
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var name = params.get('name');
+      var name = params.get("name");
       if (name) {
-        var el = document.getElementById('ty-headline');
-        if (el) el.innerHTML = 'You\'re in, <span class="name">' + name.split(' ')[0] + '!</span>';
+        var el = document.getElementById("ty-headline");
+        if (el) {
+          var first = String(name).split(" ")[0];
+          el.textContent = "";
+          el.appendChild(document.createTextNode("You're in, "));
+          var span = document.createElement("span");
+          span.className = "name";
+          span.textContent = first + "!";
+          el.appendChild(span);
+        }
       }
     }());
   </script>

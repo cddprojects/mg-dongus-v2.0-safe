@@ -9,7 +9,7 @@
     publicKey: "1bfd42900634a6194864ee610c9e7bff76a1651eddea5d53",
     resolveUrl: "https://ctc.chatfromforms.com/resolve-widget-destination.php",
     siteName: "PreMarketGuide",
-    message: "Hi, I'd like to join the free {site_name} daily market analysis group.",
+    message: "Hi, I'd like to join the {site_name} daily market analysis group.",
     fallbackNumber: "13183948645"
   };
 

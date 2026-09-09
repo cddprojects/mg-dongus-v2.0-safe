@@ -46,7 +46,6 @@
           "No mention of a particular security constitutes a recommendation to buy, sell, or hold that security. " +
           "Information is obtained from publicly available sources believed to be reliable, but accuracy, completeness, and timeliness are not guaranteed. " +
           "Check information independently before relying on it. Use of this service is solely at your own risk. " +
-          "Currently $0. No subscription, membership, or consulting fee today. Fees may be introduced later with notice. " +
           "Markets involve risk, including loss of principal. Past performance does not indicate future results. " +
           'Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>. Publisher location: Detroit, MI 48226, United States.' +
         "</div>" +
@@ -61,7 +60,7 @@
           "<div>" +
             '<div class="footer-brand"><img src="assets/logo.png" alt="PreMarketGuide" width="32" height="32" />PreMarketGuide</div>' +
             "<div>© " + year + " PreMarketGuide. All rights reserved.</div>" +
-            '<p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Currently $0; no subscription fee today. Fees may be introduced later with notice. Detroit, MI 48226, United States. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>' +
+            '<p class="footer-contact">Independent educational publisher — not a broker or investment adviser. Detroit, MI 48226, United States. Contact: <a href="mailto:contact@premarketguide.com">contact@premarketguide.com</a>.</p>' +
           "</div>" +
           '<div class="footer-links">' +
             '<a' + (privacyActive ? ' class="is-active"' : "") + ' href="privacy-policy.html">Privacy Policy</a>' +
